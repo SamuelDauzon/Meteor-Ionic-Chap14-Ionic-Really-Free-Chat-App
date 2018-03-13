@@ -11,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SettingsProvider } from '../providers/settings/settings';
 import { RfcApiProvider } from '../providers/rfc-api/rfc-api';
+import { MemoryProvider } from '../providers/memory/memory';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RfcApiProvider } from '../providers/rfc-api/rfc-api';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SettingsProvider,
-    RfcApiProvider
+    RfcApiProvider,
+    MemoryProvider
   ]
 })
 export class AppModule {}
