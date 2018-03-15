@@ -1,10 +1,14 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { IonicStorageModule } from '@ionic/storage';
 
+import { HttpClientModule } from '@angular/common/http';
+
+import { MyApp } from './app.component';
 import { AccueilPage } from '../pages/accueil/accueil';
 import { InformationsPage } from '../pages/informations/informations';
+import { CreerDiscussionPage } from '../pages/creer-discussion/creer-discussion';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -18,17 +22,21 @@ import { MemoryProvider } from '../providers/memory/memory';
     MyApp,
     AccueilPage,
     InformationsPage,
+    CreerDiscussionPage,
     TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AccueilPage,
     InformationsPage,
+    CreerDiscussionPage,
     TabsPage
   ],
   providers: [

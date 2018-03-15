@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Créer une discussion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="creer()">
+    <ion-item>
+      <ion-label>Nom de la discussion</ion-label>
+      <ion-input type="text" [(ngModel)]="discussion.nom" name="nom"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Créer</button>
+  </form>
+</ion-content>

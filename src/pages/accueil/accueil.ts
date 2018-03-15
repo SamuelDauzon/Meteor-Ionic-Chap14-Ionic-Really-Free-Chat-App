@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the AccueilPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { CreerDiscussionPage } from '../creer-discussion/creer-discussion'
 
 @IonicPage()
 @Component({
@@ -18,8 +13,8 @@ export class AccueilPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AccueilPage');
+  lienAjoutDiscussion() {
+  	this.navCtrl.push(CreerDiscussionPage);
   }
 
 }
