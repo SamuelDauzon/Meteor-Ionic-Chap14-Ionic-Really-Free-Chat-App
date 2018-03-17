@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mes discussions</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let discussion of discussions">
+      {{ discussion.nom }}
+    </button>  
+  </ion-list>
+</ion-content>

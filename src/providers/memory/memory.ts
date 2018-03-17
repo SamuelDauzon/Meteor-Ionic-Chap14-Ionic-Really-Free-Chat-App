@@ -8,6 +8,10 @@ export class MemoryProvider {
     this.storage = storage;
   }
 
+  public recupererDiscussions() {
+    return this._recupererDiscussions();
+  }
+
   public ajouterDiscussion(hashId: string, nom: string, chiffree: boolean=false) {
     this._recupererDiscussions().then((discussions) => {
       discussions.push({

@@ -8,8 +8,8 @@
   <form (ngSubmit)="creer()">
     <ion-item>
       <ion-label>Nom de la discussion</ion-label>
-      <ion-input type="text" [(ngModel)]="discussion.nom" name="nom"></ion-input>
+      <ion-input type="text" [(ngModel)]="discussion.nom" name="nom" id="discussion_nom"></ion-input>
     </ion-item>
-    <button ion-button type="submit" block>Créer</button>
+    <button ion-button type="submit" block id="validerCreation">Créer</button>
   </form>
 </ion-content>

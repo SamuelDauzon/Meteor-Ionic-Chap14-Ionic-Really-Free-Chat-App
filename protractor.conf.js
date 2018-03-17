@@ -2,7 +2,7 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     chromeOptions: {
-      args: ['--no-sandbox']
+      args: ['--no-sandbox', '--disable-web-security']
     }
   },
   directConnect: true,
@@ -17,5 +17,5 @@ exports.config = {
       project: 'e2e'
     });
   },
-  useAllAngular2AppRoots: true
+  useAllAngular2AppRoots: true,
 };
