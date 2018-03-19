@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ discussion.nom }}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="choixPartage()">
+        <ion-icon name="share-alt" large></ion-icon>
+      </button>
+      <button ion-button (click)="load(discussion.hashId)">
+        <ion-icon name="refresh" large></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-content *ngIf="!discussion.chiffree">
+    <div *ngFor="let message of discussion.messages">
+      <message [messageDiscussion]="{message:message, auteur:discussion.auteur}"></message>
+    </div>
+  </ion-content>
+</ion-content>

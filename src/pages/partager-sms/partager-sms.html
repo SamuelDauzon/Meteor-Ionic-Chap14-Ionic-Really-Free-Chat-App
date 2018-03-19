@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Partager par SMS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <ion-item>
+      <ion-label>Contact à rechercher</ion-label>
+      <ion-input type="text" [(ngModel)]="recherche" (keyup)="chercher()" name="recherche"></ion-input>
+    </ion-item>
+  </form>
+  <ion-list>
+    <button ion-item *ngFor="let contact of contactListe" (click)="choixNumero(contact)">
+      {{ contact.displayName }}
+    </button>  
+  </ion-list>
+</ion-content>

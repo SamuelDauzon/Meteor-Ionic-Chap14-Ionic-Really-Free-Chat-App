@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { MemoryProvider } from '../../providers/memory/memory';
 import { Discussion } from '../../models/discussion';
+import { DiscussionPage } from '../discussion/discussion';
 
 @IonicPage()
 @Component({
@@ -28,4 +29,11 @@ export class ListerDiscussionsPage {
       this.discussions = discussions;
     });
   }
+
+  accederDiscussion(discussion) {
+    this.navCtrl.push(DiscussionPage, {
+      hashId: discussion.hashId
+    });
+  }
+
 }

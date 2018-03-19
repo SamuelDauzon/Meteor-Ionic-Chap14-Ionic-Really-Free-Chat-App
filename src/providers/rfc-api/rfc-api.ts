@@ -26,7 +26,17 @@ export class RfcApiProvider {
         return err;
       });
     });
+  }
 
+  recupererDiscussion(hashId: string) {
+    return new Promise(resolve => {
+      this.http.get(this.settings.URL_API+'/api/conversation/'+hashId)
+      .subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
   }
 
 }

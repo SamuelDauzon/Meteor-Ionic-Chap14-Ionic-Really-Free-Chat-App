@@ -1,0 +1,17 @@
+<div style="color: light">
+  <p class="message-titre" [ngClass]="{'a-moi': messageDiscussion.auteur == messageDiscussion.message.auteur}">
+    {{ messageDiscussion.message.auteur }} - {{ messageDiscussion.message.dateMessage | date: 'dd/MM/yyyy H:mm' }}
+  </p>
+  <pre>
+    {{ messageDiscussion.message.message }}
+  </pre>
+</div>
+
+<style type="text/css">
+    .message-titre {
+        font-weight: bold;
+    }
+  .a-moi {
+    text-align:right;
+  }
+</style>
