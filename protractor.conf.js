@@ -2,7 +2,7 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     chromeOptions: {
-      args: ['--no-sandbox', '--disable-web-security']
+      args: ['--no-sandbox', '--disable-web-security', '--window-size=360,640']
     }
   },
   directConnect: true,

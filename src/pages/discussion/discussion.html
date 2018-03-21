@@ -8,6 +8,9 @@
       <button ion-button (click)="load(discussion.hashId)">
         <ion-icon name="refresh" large></ion-icon>
       </button>
+      <button ion-button (click)="configurer()" id="btn_configurer">
+        <ion-icon name="ios-cog" large></ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -19,3 +22,9 @@
     </div>
   </ion-content>
 </ion-content>
+
+<ion-footer style="background-color: #fff">
+  <button ion-button full color="danger" *ngIf="!discussion.auteur" (click)="configurer()" id="alerte_auteur">
+    Auteur non défini
+  </button>
+</ion-footer>

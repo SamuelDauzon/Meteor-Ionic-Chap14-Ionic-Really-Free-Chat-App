@@ -39,4 +39,26 @@ export class RfcApiProvider {
     });
   }
 
+  supprimerMessages(hashId: string) {
+    return new Promise(resolve => {
+      this.http.get(this.settings.URL_API+'/api/conversation/'+hashId+'/supprimerMessages')
+      .subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+
+  supprimerDiscussion(hashId: string) {
+    return new Promise(resolve => {
+      this.http.get(this.settings.URL_API+'/api/conversation/'+hashId+'/supprimer')
+      .subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+
 }

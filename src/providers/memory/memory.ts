@@ -33,4 +33,8 @@ export class MemoryProvider {
     return this.storage.get('discussions');
   }
 
+  public remplacerDiscussions(discussions) {
+    this.storage.set('discussions', discussions);
+  }
+
 }

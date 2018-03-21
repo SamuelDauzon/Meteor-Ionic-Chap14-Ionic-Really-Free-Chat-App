@@ -8,6 +8,7 @@ import { MemoryProvider } from '../../providers/memory/memory';
 import { Discussion } from '../../models/discussion';
 import { SettingsProvider } from '../../providers/settings/settings';
 import { PartagerSmsPage } from '../partager-sms/partager-sms';
+import { ConfigurerDiscussionPage } from '../configurer-discussion/configurer-discussion';
 
 @IonicPage()
 @Component({
@@ -104,9 +105,27 @@ export class DiscussionPage {
 
   ouvrirPageNavigateur() {
     window.open(
-      this.settings.URL_API+'/conversation/'+this.discussion.hashId, 
+      this.settings.URL_API+'/conversation/'+this.discussion.hashId,
       '_system'
     );
+  }
+
+  configurer() {
+    let myModal = this.modalCtrl.create(
+      ConfigurerDiscussionPage,
+      {
+        'discussion': this.discussion
+      }
+      );
+    myModal.onDidDismiss(data => {
+      if ("action" in data && data.action == "back") {
+        this.navCtrl.pop();
+      }
+      else {
+        this.load(this.discussion.hashId);  
+      }
+    });
+    myModal.present();
   }
 
 }

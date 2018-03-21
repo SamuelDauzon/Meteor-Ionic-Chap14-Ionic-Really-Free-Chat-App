@@ -15,6 +15,7 @@ import { ListerDiscussionsPage } from '../pages/lister-discussions/lister-discus
 import { DiscussionPage } from '../pages/discussion/discussion';
 import { PartagerSmsPage } from '../pages/partager-sms/partager-sms';
 import { MessageComponent } from '../components/message/message';
+import { ConfigurerDiscussionPage } from '../pages/configurer-discussion/configurer-discussion';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -33,6 +34,7 @@ import { MemoryProvider } from '../providers/memory/memory';
     DiscussionPage,
     PartagerSmsPage,
     MessageComponent,
+    ConfigurerDiscussionPage,
     TabsPage
   ],
   imports: [
@@ -54,6 +56,7 @@ import { MemoryProvider } from '../providers/memory/memory';
     DiscussionPage,
     PartagerSmsPage,
     MessageComponent,
+    ConfigurerDiscussionPage,
     TabsPage
   ],
   providers: [

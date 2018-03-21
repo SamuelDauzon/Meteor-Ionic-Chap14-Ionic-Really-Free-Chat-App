@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Configuration</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<button ion-button full color="light" (click)="vider()">
+  Supprimer les messages
+</button>
+<button ion-button full color="alert" (click)="supprimer()">
+  Supprimer la discussion
+</button>
+<form (ngSubmit)="valider()">
+    <ion-item>
+      <ion-label>Nom d'auteur</ion-label>
+      <ion-input type="text" [(ngModel)]="discussion.auteur" name="auteur"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Valider</button>
+  </form>
+</ion-content>

@@ -26,12 +26,10 @@ describe("Page de création de discussion", () => {
       "Attente du chargement des discussions").then(function () {
         browser.sleep(500);
         expect(
-          element(by.css('page-lister-discussions ion-list button')).getText())
+          element(by.css('page-lister-discussions ion-list')).getText())
           .toContain('Equipe SSL');
       });
     });
   });
-
-
 
 });
