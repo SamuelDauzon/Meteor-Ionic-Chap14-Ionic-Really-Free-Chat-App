@@ -27,4 +27,18 @@
   <button ion-button full color="danger" *ngIf="!discussion.auteur" (click)="configurer()" id="alerte_auteur">
     Auteur non défini
   </button>
+  <form (ngSubmit)="envoyer()" *ngIf="discussion.auteur" id="envoiMessage">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10>
+          <ion-textarea type="text" name="message" rows="1" placeholder="Ecrivez ici..." [(ngModel)]="nouveauMessage"></ion-textarea>
+        </ion-col>
+        <ion-col col-2>
+          <button ion-button icon-only type="submit">
+            <ion-icon name="add"> </ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-footer>

@@ -19,6 +19,7 @@ export class DiscussionPage {
   hashId: string;
   discussion: Discussion;
   autorefresh: any;
+  nouveauMessage: string;
 
   constructor(
     public navCtrl: NavController, 
@@ -126,6 +127,18 @@ export class DiscussionPage {
       }
     });
     myModal.present();
+  }
+
+  envoyer() {
+    if (this.nouveauMessage) {
+      this.rfcApiProvider.ajouterMessage(
+        this.discussion.hashId, 
+        this.nouveauMessage,
+        this.discussion.auteur
+      );  
+    }
+    this.nouveauMessage = '';
+    this.load(this.discussion.hashId);
   }
 
 }

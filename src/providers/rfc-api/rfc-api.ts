@@ -61,4 +61,24 @@ export class RfcApiProvider {
     });
   }
 
+  ajouterMessage(hashId: string, message: string, auteur: string) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
+    const body = new HttpParams()
+      .set('auteur', auteur)
+      .set('message', message)
+    ;
+    return new Promise(resolve => {
+      this.http.post(
+        this.settings.URL_API+'/api/conversation/'+hashId+'/ajoutMessage', 
+        body,
+        {'headers': headers}
+      )
+      .subscribe(data => {
+        resolve(data);
+      }, (err) => {
+        return err;
+      });
+    });
+  }
+
 }

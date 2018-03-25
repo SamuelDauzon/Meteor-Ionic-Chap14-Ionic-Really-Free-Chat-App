@@ -18,4 +18,6 @@ exports.config = {
     });
   },
   useAllAngular2AppRoots: true,
+  allScriptsTimeout: 30000,
+  getPageTimeout: 30000,
 };
